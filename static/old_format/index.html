@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>POSIFIT - Welcome</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+  <canvas id="c"></canvas>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="header/logos/logo1.png" alt="Main Logo" class="logo1" />
+      <div class="separator"></div>
+      <img src="header/logos/logo2.png" alt="Secondary Logo" class="logo2" />
+    </div>
+
+    <nav class="navbar-links">
+      <a href="/home">Home</a>
+      <a href="/about">About POSIFIT</a>
+      <a href="/pilots">Pilots</a>
+      <a href="/contributors">Contributors</a>
+      <a href="/contact" class="contact-link">Contact</a>
+    </nav>
+  </header>
+
+  <!-- WELCOME SECTION -->
+ <section class="landing">
+  <div class="container">
+    <div class="grid">
+      <div class="left-text">
+        <h3>POSIFIT project</h3>
+        <h1>WELCOME</h1>
+        <p>To continue, please select a pilot</p>
+      </div>
+
+      <div class="carousel-container">
+        <button class="arrow left-arrow">‹</button>
+
+        <div class="carousel">
+          <div class="card" style="background-image: url('cards/Luxembourg.jpg');"><span>Luxembourg</span></div>
+          <div class="card" style="background-image: url('cards/Turkiye.jpg');"><span>Türkiye</span></div>
+          <div class="card" style="background-image: url('cards/Hungary.jpg');"><span>Hungary</span></div>
+          <div class="card" style="background-image: url('cards/Spain.jpg');"><span>Spain</span></div>
+          <div class="card" style="background-image: url('cards/Dutch.jpg');"><span>Netherlands</span></div>
+        </div>
+
+        <button class="arrow right-arrow">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-columns">
+      <div>
+        <h4>Reach us</h4>
+        <p>+1012 3456 789</p>
+        <p>demo@gmail.com</p>
+        <p>132 Dartmouth Street, Boston, MA 02156</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <p>About</p>
+        <p>Contact</p>
+        <p>Blogs</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p>Techlabz Keybox</p>
+        <p>Downloads</p>
+        <p>Forum</p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <p>Privacy Policy</p>
+        <p>Terms & Services</p>
+        <p>Refund Policy</p>
+      </div>
+      <div>
+        <h4>Join Our Newsletter</h4>
+        <input type="email" placeholder="Your email address"/>
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <p class="eu-note">This project has received funding from the European Union’s Horizon Europe research and innovation programme under Grant Agreement No 101104058</p>
+    <p class="credits">Designed by Ataberk Yılmaz, Ömür Buğra Gündüz • Developed by Çağdaş Öztürk, Ataberk Yilmaz</p>
+  </footer>
+    <script src="script.js"></script>
+
+      <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js",
+    "three/examples/jsm/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.152.0/examples/jsm/loaders/GLTFLoader.js",
+    "gsap": "https://cdn.jsdelivr.net/npm/gsap@3.12.2/index.min.js"
+  }
+}
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+    import gsap from 'gsap';
+
+    const canvas = document.getElementById('c');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 5);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(innerWidth, innerHeight);
+    window.addEventListener('resize', () => {
+      camera.aspect = innerWidth/innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(innerWidth, innerHeight);
+    });
+
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 5, 5);
+    scene.add(light);
+
+    let model;
+    new GLTFLoader().load('model/LEGOFIT_model.glb', gltf => {
+      model = gltf.scene;
+      scene.add(model);
+      model.position.set(0, 0, 0);
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Scroll-triggered animation
+    let hasScrolled = false;
+    window.addEventListener('scroll', () => {
+      if (!model || hasScrolled) return;
+      hasScrolled = true;
+      gsap.to(model.position, {
+        x: 1.5,
+        y: 0.5,
+        z: -1,
+        duration: 1.2,
+        ease: 'power2.out'
+      });
+      gsap.to(model.rotation, {
+        y: Math.PI * 1.25,
+        duration: 1.2,
+        ease: 'power2.out'
+      });
+    });
+  </script>
+
+</body>
+
+</html>

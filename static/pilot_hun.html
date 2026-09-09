@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pilots | Retrofit Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- === NAVBAR (assumed already styled in style.css) === -->
+  <!-- HEADER -->
+   <!-- === NAVBAR === -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <img src="header/logos/logo1.png" alt="Main Logo" class="logo1" />
+      <div class="separator"></div>
+      <img src="header/logos/POSIFIT_logo-06.png" alt="Third Logo" class="logo3" />
+    </div>
+
+    <nav class="navbar-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About POSIFIT</a>
+      <div class="nav-item dropdown">
+        <a href="#" class="pilot-btn">Pilots <img src="logo/dropdown.svg" alt="▼" class="arrow-icon"></a>
+        <div class="dropdown-menu">
+          <div class="pilot-name">
+            <a href="#">Luxembourg</a>
+            <div class="pilot-submenu">
+              <a href="/pilot_lux_explorer">All results</a>
+              <a href="pilot_lux.html">Pilot details</a>
+            </div>
+          </div>
+          <div class="pilot-name">
+            <a href="#">Turkiye</a>
+            <div class="pilot-submenu">
+              <a href="/pilot_tur_explorer">All results</a>
+              <a href="pilot_tur.html">Pilot details</a>
+            </div>
+          </div>
+          <div class="pilot-name">
+            <a href="#">Hungary</a>
+            <div class="pilot-submenu">
+              <a href="/pilot_hun_explorer">All results</a>
+              <a href="pilot_hun.html">Pilot details</a>
+            </div>
+          </div>
+          <div class="pilot-name">
+            <a href="#">Spain</a>
+            <div class="pilot-submenu">
+              <a href="/pilot_spa_explorer">All results</a>
+              <a href="pilot_spa.html">Pilot details</a>
+            </div>
+          </div>
+          <div class="pilot-name">
+            <a href="#">Netherlands</a>
+            <div class="pilot-submenu">
+              <a href="/pilot_net_explorer">All results</a>
+              <a href="pilot_net.html">Pilot details</a>
+            </div>
+          </div>
+      </div>
+      <a href="contributors.html">Contributors</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </header>
+
+<!-- === MAIN ABOUT SECTION === -->
+
+  <section class="pilot-hero" style="background-image: url('cards/Hungary.jpg');">
+    <div class="overlay"></div>
+
+    <div class="page-container">
+      <div class="column-guides">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+
+      <div class="hero-content">
+        <p class="pilot-label">Pilot 3.</p>
+        <h1 class="pilot-details-name">Hungary</h1>
+        <p class="pilot-description">
+          Demonstrating scalable renovation solutions that integrate
+          solar technologies in a social housing complex under Mediterranean conditions.
+        </p>
+        <div class="pilot-hero-action">
+          <div class="pilot-dot-extended-line"></div>
+          <a href="/pilot_hun_explorer" class="solution-btn-pilot">
+            See All Results
+            <span class="arrow-icon-container">
+              <img src="logo/arrow_outward.svg" alt="Arrow" class="arrow-icon" />
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="other-pilots-wrapper">
+    <div class="page-container">
+      <div class="column-guides">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+      </div>
+
+      <!-- Full grid -->
+      <div class="other-pilots-grid">
+        <!-- Title in column 1 -->
+        <div class="other-pilots-title">
+          <h2>Checkout<br>Other Pilots</h2>
+          <div class="underline"></div>
+        </div>
+
+        <!-- Cards start from column 2 -->
+        <a href="pilot_lux.html" class="pilot-card">
+          <img src="cards/Luxembourg.jpg" alt="Luxembourg" />
+          <span class="pilot-name">Luxembourg</span>
+        </a>
+
+        <a href="pilot_tur.html" class="pilot-card">
+          <img src="cards/Turkiye.jpg" alt="Turkiye" />
+          <span class="pilot-name">Turkiye</span>
+        </a>
+
+        <a href="pilot_spa.html" class="pilot-card">
+          <img src="cards/Spain.jpg" alt="Spain" />
+          <span class="pilot-name">Spain</span>
+        </a>
+
+        <a href="pilot_net.html" class="pilot-card">
+          <img src="cards/Netherlands.jpg" alt="Netherlands" />
+          <span class="pilot-name">Netherlands</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+
+    <!-- Top section: EU funding + logo -->
+    <div class="footer-top">
+      <p>
+        This project has received funding from the European Union’s Horizon Europe research and innovation programme under Grant Agreement No 101104058
+      </p>
+      <img src="logo/europe_footer.png" alt="EU Logo" class="eu-logo-footer" />
+    </div>
+
+    <!-- White line separator -->
+    <hr class="footer-separator" />
+
+    <!-- Columns and Newsletter -->
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Reach us</h3>
+        <h4><img src="logo/phone.svg" class="icon" alt="Phone" />+90 312 210 2262</h4>
+        <h4> <img src="logo/mail.svg" class="icon" alt="Email" />ipekg@metu.edu.tr</h4>
+        <h4><img src="logo/pin.svg" class="icon" alt="Address" />Orta Doğu Teknik Üniversitesi,<br>Dumlupınar Blv. No: 1<br> Ankara/ Turkiye</h4>
+      </div>
+
+      <div class="footer-column">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About POSIFIT</a></li>
+          <li><a href="contributors.html">Contributors</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Pilots</h3>
+        <ul>
+          <li><a href="pilot_lux.html">Luxembourg</a></li>
+          <li><a href="pilot_tur.html">Turkiye</a></li>
+          <li><a href="pilot_hun.html">Hungary</a></li>
+          <li><a href="pilot_spa.html">Spain</a></li>
+          <li><a href="pilot_net.html">Netherlands</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="https://metu-urbanenergy.github.io/sustainability-lab./">METU Urban Energy Transition and Sustainability Lab.</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- White bottom banner -->
+    <div class="footer-bottom">
+      <span>POSIFIT 2025</span>
+      <span>Designed by Ataberk Yilmaz, Ömür Buğra Gündüz | Developed by Çağdaş Öztürk, Ataberk Yilmaz</span>
+    </div>
+  </footer>
+
+</body>
+</html>

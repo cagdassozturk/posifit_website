@@ -1,0 +1,253 @@
+/* === RESET & BASE STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* === CONTAINER === */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === HEADER === */
+.navbar {
+  background-color: #2AACFD;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo1 {
+  height: 45px;
+}
+
+.separator {
+  width: 2px;
+  height: 40px;
+  background-color: white;
+  margin: 0 7px;
+}
+
+.logo2 {
+  height: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.contact-link {
+  background-color: #037ECB;
+}
+
+.contact-link:hover {
+  background-color: #025d91;
+}
+
+/* === LANDING SECTION === */
+.landing {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 240px);
+  column-gap: 20px;
+  align-items: start;
+}
+
+/* Left Text Block (2 Columns) */
+.left-text {
+  grid-column: span 2;
+}
+
+.left-text h3 {
+  color: #2AACFD;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.left-text h1 {
+  color: #2AACFD;
+  font-family: 'Courier New', monospace;
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.left-text p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* === CAROUSEL AREA (3 Columns) === */
+.carousel-container {
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+/* CARD */
+.card {
+  min-width: 240px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px black;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ARROWS */
+.arrow {
+  background-color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.arrow:hover {
+  transform: scale(1.1) translateY(-50%);
+}
+
+.left-arrow {
+  left: -25px;
+}
+
+.right-arrow {
+  right: -25px;
+}
+
+/* === FOOTER === */
+.footer {
+  background-color: #f2f2f2;
+  padding: 40px 20px;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.footer p {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer input[type="email"] {
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 200px;
+}
+
+.footer button {
+  padding: 8px 16px;
+  background-color: #2AACFD;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  background-color: #037ECB;
+}
+
+.eu-note,
+.credits {
+  margin-top: 30px;
+  font-size: 0.8rem;
+  color: #999;
+  text-align: center;
+}
+
+/* === 3D CANVAS === */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Keep it behind all other content */
+  pointer-events: none; /* Optional: prevents interaction blocking */
+}

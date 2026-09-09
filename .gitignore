@@ -1,0 +1,32 @@
+# Virtual environment (recreate with: python3 -m venv venv && pip install -r requirements.txt)
+venv/
+env/
+ENV/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Backup files created during past migrations
+*.backup.*
+*_yedek*
+*.bak
+
+# Local env files (never commit secrets)
+.env
+.env.*
+
+# Editor
+.vscode/
+.idea/
+*.swp
